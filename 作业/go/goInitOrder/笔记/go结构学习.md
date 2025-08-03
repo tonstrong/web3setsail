@@ -42,7 +42,7 @@ utils.DoSomething()    // 实际调用的是 myproject/utils 包的 helper.DoSom
 myhelper.DoSomething() // 调用 other/utils 包的功能
 ```
 
-* 若只需执行包的 `init()` 函数而不直接使用其成员，可匿名导入（用下划线 `_` 作为别名
+* 若只需执行包的 `init()` 函数而不直接使用其成员，可匿名导入（用下划线 `_` 作为别名）
 * package名和路径名可以不同，import时必须以路径名，但是调用方法时需要使用包名。
   * 例如：
     - 假设包的路径是 `github.com/example/utils`，但包内声明为 `package tool`
