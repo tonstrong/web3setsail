@@ -38,12 +38,23 @@ func main() {
 		fmt.Println(k, v)
 	}
 
-	select {
-	case <-time.After(time.Second * 2):
-		fmt.Println("timeout")
-	case <-time.After(time.Second):
-		fmt.Println("过了2秒")
-		break
-	}
+	var ch1 chan string
+	ch1 = make(chan string)
+	go func() {
+		for {
+			time.Sleep(1 * time.Second)
+			ch1 <- "hello"
+		}
+	}()
 
+	for {
+		select {
+		case t := <-ch1:
+			fmt.Println(t)
+		case <-time.After(time.Second):
+			fmt.Println("过了2秒")
+			break
+		}
+
+	}
 }
