@@ -8,7 +8,7 @@ import (
 	"sort"
 )
 
-func main() {
+func maina() {
 	student := test.Student()
 	student.Age = 1
 	student.Name = "a"
@@ -106,6 +106,7 @@ func main() {
 
 	var sq = Sequence{3, 2, 1}
 	println(sq.String())
+
 }
 
 type Sequence []int
