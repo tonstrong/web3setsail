@@ -1,0 +1,37 @@
+e-commerce/
+├── cmd/
+│   └── api/
+│       └── main.go                # API服务入口
+├── internal/
+│   ├── app/
+│   │   └── api/
+│   │       ├── handler/           # HTTP处理器
+│   │       │   ├── user_handler.go
+│   │       │   ├── product_handler.go
+│   │       │   └── order_handler.go
+│   │       ├── service/           # 业务逻辑
+│   │       │   ├── user_service.go
+│   │       │   ├── product_service.go
+│   │       │   └── order_service.go
+│   │       └── model/             # 应用内部模型
+│   │           ├── user.go
+│   │           ├── product.go
+│   │           └── order.go
+│   └── pkg/
+│       ├── model/                 # 共享模型
+│       │   ├── base.go            # 基础模型定义
+│       │   └── db.go              # 数据库连接
+│       ├── utils/                 # 工具函数
+│       └── config/                # 配置管理
+├── pkg/
+│   └── common/                    # 公共库（可选）
+│       └── model/                 # 公共模型（可选）
+├── api/
+│   └── swagger/                   # API文档
+├── configs/
+│   └── config.yaml                # 配置文件
+├── scripts/
+│   └── build.sh                   # 构建脚本
+├── test/
+│   └── integration/               # 集成测试
+└── go.mod                         # Go Modules
